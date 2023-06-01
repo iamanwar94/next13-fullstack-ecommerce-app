@@ -1,25 +1,28 @@
-import { Children } from 'react'
-import '@styles/globals.css'
+import "@styles/globals.css";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "A GPT AI Robot",
-  description: "Discover and Share"
-}
+  description: "Discover and Share",
+};
 
-
-const RootLayout = ({children}) => {
+const RootLayout = ({ children }) => {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body>
-        <div className="main">
-          <div className='gradient'/>
-          <main className='app'>
-            {children}
-          </main>
-        </div>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+            <main className="app">
+              <Nav />
+              {children}
+            </main>
+          </div>
+        </Provider>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
